@@ -37,15 +37,18 @@ export class RegisterComponent implements OnInit {
       || formData.password_two == ''
     ) {
       this.toastr.warning('Es müssen alle Felder ausgefüllt werden.');
+      return;
     }
 
     if ( formData.password !== formData.password_two ) {
       this.toastr.warning('Die Passwörter stimmen nicht überein.');
+      return;
     }
 
     // check email
     if ( !EmailValidator.validate(formData.mail) ) {
       this.toastr.warning('Bitte überprüfen Sie die E-Mail.');
+      return;
     }
 
     const body = new HttpParams()
