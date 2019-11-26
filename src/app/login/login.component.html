@@ -52,15 +52,15 @@
             </h3>
 
             <!--begin::Form-->
-            <form class="kt-login-v1__form kt-form" action="" autocomplete="off" id="kt_login_form">
+            <form class="kt-login-v1__form kt-form" #login = "ngForm" (ngSubmit) = "onClickSubmit(login.value)" autocomplete="off" id="kt_login_form">
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="E-Mail" name="username" autocomplete="off">
+                <input class="form-control" type="text" placeholder="E-Mail" name="username" autocomplete="off" ngModel>
               </div>
               <div class="form-group">
-                <input class="form-control" type="password" placeholder="Passwort" name="password" autocomplete="off">
+                <input class="form-control" type="password" placeholder="Passwort" name="password" autocomplete="off" ngModel>
               </div>
               <div class="kt-login-v1__actions">
-                <a href="javascript:void(null);" class="btn btn-pill btn-elevate" id="kt_login_submit">Anmelden</a>
+                <input type="submit" class="btn btn-pill btn-elevate" id="kt_login_submit" value="Anmelden" />
               </div>
             </form>
 

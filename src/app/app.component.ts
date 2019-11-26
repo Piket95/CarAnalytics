@@ -8,4 +8,6 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'CarAnalytics';
+  // tslint:disable-next-line: variable-name
+  api_key = '3290ec3c19a8a39362f7d70043f15627';
 }
