@@ -28,7 +28,7 @@ import { RegisterComponent } from './register/register.component';
       {path: 'login', component: LoginComponent},
       {path: 'home', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
-      {path: '', component: RegisterComponent}
+      {path: '', component: LoginComponent}
       ]),
     FormsModule,
     HttpClientModule
