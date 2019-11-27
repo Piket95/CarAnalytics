@@ -22,20 +22,20 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.document.body.style.backgroundImage = '';
+    // tslint:disable-next-line:max-line-length
+    this.document.getElementById('car_loader').innerHTML = '<div style="margin-top: 100px" class="d-flex justify-content-center"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></div>';
 
     if (!localStorage.hasOwnProperty('currentUser')) {
       this.router.navigate(['/login']);
     }
-
-    // console.log('Home: ' + JSON.parse(localStorage.getItem('currentUser'))['mail']);
 
     const body = new HttpParams()
       .set('api_key', this.appcomponent.api_key);
 
     this.http.post('https://api.philippdalheimer.de/request/usercar/get/' + JSON.parse(localStorage.getItem('currentUser'))['id'], body)
       .subscribe(data => {
-
-        if(data['success'] == true) {
+        if (data['success'] == true) {
+          this.document.getElementById('car_loader').innerHTML = '';
           this.cars = data['cars'];
         }
       });

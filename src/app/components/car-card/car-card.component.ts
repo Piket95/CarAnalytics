@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+declare var jQuery: any;
 
 @Component({
   selector: 'app-car-card',
@@ -11,6 +12,12 @@ export class CarCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    (function ($) {
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    })(jQuery);
+
   }
 
   getKilometerstand(position) {
