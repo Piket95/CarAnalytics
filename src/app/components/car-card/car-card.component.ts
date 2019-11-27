@@ -11,7 +11,6 @@ export class CarCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.dir(this.carDetails.standard_picture);
   }
 
   getKilometerstand(position) {

@@ -27,14 +27,13 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/login']);
     }
 
-    console.log('Home: ' + JSON.parse(localStorage.getItem('currentUser'))['mail']);
+    // console.log('Home: ' + JSON.parse(localStorage.getItem('currentUser'))['mail']);
 
     const body = new HttpParams()
       .set('api_key', this.appcomponent.api_key);
 
     this.http.post('https://api.philippdalheimer.de/request/usercar/get/' + JSON.parse(localStorage.getItem('currentUser'))['id'], body)
       .subscribe(data => {
-        console.log(data);
 
         if(data['success'] == true) {
           this.cars = data['cars'];
