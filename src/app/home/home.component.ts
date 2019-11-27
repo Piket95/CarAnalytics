@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     const body = new HttpParams()
       .set('api_key', this.appcomponent.api_key);
 
-    this.http.post('https://api.philippdalheimer.de/request/usercar/get/3', body)
+    this.http.post('https://api.philippdalheimer.de/request/usercar/get/' + JSON.parse(localStorage.getItem('currentUser'))['id'], body)
       .subscribe(data => {
         console.log(data);
 
