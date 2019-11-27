@@ -65,10 +65,10 @@ export class RegisterComponent implements OnInit {
 
         if(data['success'] == true){
           this.toastr.success('Account wurde erfolgreich erstellt.');
-          // TODO 26.11.2019 Philipp: Weiterleitung zu Profil (direkt eingeloggt)
           console.dir(data);
-          // this.router.navigate(['/home']);
-        }else{
+          localStorage.setItem('currentUser', JSON.stringify(data['user']));
+          this.router.navigate(['/home']);
+        } else {
           this.toastr.warning(data['message']);
         }
       });
