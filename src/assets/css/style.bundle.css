@@ -32790,3 +32790,59 @@ body {
 .kt-grid--root {
   height: 100%;
 }
+
+.card_car_main:hover {
+  box-shadow: 0 0 18px #0000001f;
+  transform: scale(1);
+}
+
+.card_car_main {
+  transition: ease-in-out .2s;
+  transform: scale(0.995);
+}
+
+.km_zaehler {
+  display: table;
+  margin: 0 auto;
+  margin-top: -35px;
+}
+
+.km_zaehler .km {
+  border: 2px solid #0000007a;
+  margin: 0px 2px;
+  padding: 0px 2px;
+  font-family: monospace;
+  font-size: 19px;
+  background: #00000063;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.km_zaehler .km_indicator {
+  font-family: monospace;
+  font-size: 13px;
+  color: #fff;
+}
+
+.car_card_buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.car_card_buttons .btn-circle {
+  margin: 0px 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.kt-header--fixed .kt-page {
+  padding-top: 0 !important;
+}
+
+.kt-subheader .kt-subheader__main .kt-subheader__title {
+  font-size: 1.8rem;
+}
+
+app-car-card .card-title {
+  font-size: 1.65rem;
+}
