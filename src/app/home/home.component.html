@@ -28,9 +28,32 @@
 
         <!-- begin:: Content -->
         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+          <span id="car_loader"></span>
           <div class="row">
             <div *ngFor="let car of cars" class="col-lg-4">
-              <app-car-card [carDetails]="car"></app-car-card>
+              <app-car-card class="car_container" [carDetails]="car"></app-car-card>
+            </div>
+
+            <div *ngIf="cars == ''"class="col-lg-4 car_container">
+                <div class="card card_car_main" style="width: 100%; margin: 10px; border-radius: 6px;">
+                  <div class="kt-bg-metal kt-padding-50" style="min-height: 230px; border-radius: 6px 6px 0 0;"></div>
+                  <div class="km_zaehler">
+                    <span class="km">0</span>
+                    <span class="km">0</span>
+                    <span class="km">0</span>
+                    <span class="km">0</span>
+                    <span class="km">0</span>
+                    <span class="km">0</span>
+                    <span class="km">0</span>
+                    <span class="km_indicator">km</span>
+                  </div>
+                  <div class="card-body" style="text-align: center; min-height: 200px">
+                    <h5 class="card-title" style="margin-top: 5px">Kein KFZ vorhanden</h5>
+                    <div class="car_card_buttons" style="margin-top: 70px">
+                      <a href="/create/car" class="btn btn-primary">Neues KFZ hinzufügen</a>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
@@ -45,9 +68,9 @@
             <a href="#">&copy; Dennis Adam & Philipp Dalheimer</a>
           </div>
           <div class="kt-footer__menu">
-            <a href="http://keenthemes.com/keen" target="_blank" class="kt-footer__menu-link kt-link">About</a>
-            <a href="http://keenthemes.com/keen" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
-            <a href="http://keenthemes.com/keen" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
+            <a href="" target="_blank" class="kt-footer__menu-link kt-link">About</a>
+            <a href="" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
+            <a href="" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
           </div>
         </div>
       </div>
@@ -60,6 +83,3 @@
 
   <!-- end:: Page -->
 </div>
-
-
-

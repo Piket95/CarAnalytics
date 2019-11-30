@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {AppComponent} from '../../app.component';
 
 @Component({
   selector: 'app-menu',
@@ -8,12 +9,28 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  private userdata;
 
-  ngOnInit() {
+  constructor( private router: Router ) {
+    if (localStorage.hasOwnProperty('currentUser')) {
+      this.userdata = JSON.parse(localStorage.getItem('currentUser'));
+    }
   }
 
-  logout(){
+  private userName = '';
+  private userImage = '';
+
+
+  ngOnInit() {
+    this.userName = this.userdata.firstname + ' ' + this.userdata.lastname;
+    if (this.userdata.profile_picture !== '') {
+      this.userImage = this.userdata.profile_picture;
+    } else {
+      this.userImage = 'assets/media/users/default.jpg';
+    }
+  }
+
+  logout() {
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }

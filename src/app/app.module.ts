@@ -29,10 +29,20 @@ import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
+      {path: '', component: LoginComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'home', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
-      {path: '', component: LoginComponent}
+
+      {path: 'home', component: HomeComponent},
+      {path: 'prognose/costs', component: HomeComponent},
+      {path: 'analysis/buy', component: HomeComponent},
+      {path: 'analysis/fuel', component: HomeComponent},
+      {path: 'tuev', component: HomeComponent},
+      {path: 'mileage', component: HomeComponent},
+      {path: 'profile', component: HomeComponent},
+      {path: 'settings', component: HomeComponent},
+      {path: 'create/car', component: HomeComponent},
+      {path: 'maintenance', component: HomeComponent}
       ]),
     FormsModule,
     HttpClientModule
