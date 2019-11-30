@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.document.body.style.backgroundImage = 'url(assets/media/misc/bg_1.jpg)';
+    this.document.body.style.backgroundAttachment = 'fixed';
   }
 
   onClickSubmit(formData) {
@@ -51,6 +52,13 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    const txtfirstname: HTMLInputElement = this.document.getElementById('txt_firstname') as HTMLInputElement;
+    const txtlastname: HTMLInputElement = this.document.getElementById('txt_lastname') as HTMLInputElement;
+    const txtmail: HTMLInputElement = this.document.getElementById('txt_mail') as HTMLInputElement;
+    const txtbirthday: HTMLInputElement = this.document.getElementById('txt_birthday') as HTMLInputElement;
+    const txtpw1: HTMLInputElement = this.document.getElementById('txt_pw1') as HTMLInputElement;
+    const txtpw2: HTMLInputElement = this.document.getElementById('txt_pw2') as HTMLInputElement;
+
     const body = new HttpParams()
       .set('api_key', this.appcomponent.api_key)
       .set('firstname', formData.firstname)
@@ -65,7 +73,15 @@ export class RegisterComponent implements OnInit {
 
         if(data['success'] == true){
           this.toastr.success('Account wurde erfolgreich erstellt.');
-          console.dir(data);
+
+          // clear input fields
+          txtfirstname.value = '';
+          txtlastname.value = '';
+          txtmail.value = '';
+          txtbirthday.value = '';
+          txtpw1.value = '';
+          txtpw2.value = '';
+
           localStorage.setItem('currentUser', JSON.stringify(data['user']));
           this.router.navigate(['/home']);
         } else {

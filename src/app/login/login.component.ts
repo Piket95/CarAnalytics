@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.document.body.style.backgroundImage = 'url(assets/media/misc/bg_1.jpg)';
+    this.document.body.style.backgroundAttachment = 'fixed';
 
     if (localStorage.hasOwnProperty('currentUser')) {
       this.router.navigate(['/home']);
