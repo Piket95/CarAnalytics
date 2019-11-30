@@ -23,21 +23,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/assets/plugins/global/plugins.bundle.css",
-              "src/assets/css/style.bundle.css",
-              "src/assets/css/skins/header/base/light.css",
-              "src/assets/css/skins/header/menu/light.css",
-              "src/assets/css/skins/brand/navy.css",
-              "src/assets/css/skins/aside/navy.css",
-              "src/assets/css/pages/login/login-v1.css"
-            ],
-            "scripts": [
-              "src/assets/plugins/global/plugins.bundle.js",
-              "src/assets/js/scripts.bundle.js",
-              "src/assets/js/global/layout/layout.js",
-              "src/assets/js/pages/components/base/tooltips.js"
-            ]
+            "styles": [],
+            "scripts": []
           },
           "configurations": {
             "production": {
