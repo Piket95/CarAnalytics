@@ -33,7 +33,7 @@ export class CarCardComponent implements OnInit {
     if (this.carDetails.car_profile_picture == null) {
       const styles = {
         background: 'url(' + this.carDetails.standard_picture + ') no-repeat center center',
-        backgroundSize: '20vmin'
+        backgroundSize: '135px'
       };
       return styles;
     } else {
