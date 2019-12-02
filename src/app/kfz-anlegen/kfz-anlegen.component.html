@@ -27,7 +27,78 @@
         <!-- begin:: Content -->
         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
           <div class="row">
-            <p>Content goes here...</p>
+            <div class="col-lg-11">
+              <!--begin::Portlet-->
+              <form (ngSubmit)="onClickSubmit()" autocomplete="off">
+                <div class="kt-portlet">
+                <div class="kt-portlet__body">
+                  <div class="kt-portlet__content">
+
+                    <div class="form-group">
+                      <label>Hersteller</label>
+                      <select class="form-control kt-select2 select2" id="manufacturer_id" name="manufacturer_id">
+                        <option *ngFor="let manufacturer of manufacturers" value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Modellname</label>
+                      <input type="text" class="form-control" placeholder="Model 3" name="car_name" id="car_name">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Kilometerstand</label>
+                      <input type="number" class="form-control" min="0" maxlength="6" placeholder="000000" step="1" max="999999" name="mileage" id="mileage">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Kaufpreis</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend"><span class="input-group-text">&euro;</span></div>
+                        <input type="number" step="0.01" min="0" class="form-control" placeholder="30000" aria-describedby="basic-addon1" id="price">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label>PS</label>
+                      <input type="number" max="2000" step="1" min="0" class="form-control" placeholder="75" name="test" id="ps">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Baujahr</label>
+                      <input type="number" maxlength="4" step="1" min="1750" class="form-control" placeholder="2018" id="construction_year">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Treibstoff</label>
+                      <select class="form-control kt-select2 select2" id="fuel_id">
+                        <option *ngFor="let fuel of fuels" value="{{fuel.id}}">{{fuel.name}}</option>
+                      </select>
+                    </div>
+
+                    <!-- TODO: Custom Bild implementieren-->
+                    <div class="form-group">
+                      <label>Benutzerdefiniertes Bild <b>(optional)</b></label>
+                      <div></div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="custom_image" name="custom_image">
+                        <label class="custom-file-label" for="custom_image">Datei auswählen</label>
+                        <span class="form-text text-muted">Das beste Ergebnis erzielst du mit dem Bildformat 16:9 (Querformat)</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="kt-portlet__foot">
+                  <div class="kt-form__actions">
+                    <button type="submit" class="btn btn-primary">KFZ anlegen</button>
+                    <a href="/home" style="float: right" class="btn btn-secondary">Abbrechen</a>
+                  </div>
+                </div>
+              </div>
+              </form>
+              <!--end::Portlet-->
+            </div>
           </div>
         </div>
 

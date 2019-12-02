@@ -41,7 +41,7 @@ import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
       {path: 'mileage', component: HomeComponent},
       {path: 'profile', component: HomeComponent},
       {path: 'settings', component: HomeComponent},
-      {path: 'create/car', component: HomeComponent},
+      {path: 'create/car', component: KfzAnlegenComponent},
       {path: 'maintenance', component: HomeComponent}
       ]),
     FormsModule,
