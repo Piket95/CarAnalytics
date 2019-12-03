@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class MaincardComponent implements OnInit {
 
   @Input()
-  footer: string;
+  footer: boolean;
   @Input()
   footerButtonLeftText: string;
   @Input()
