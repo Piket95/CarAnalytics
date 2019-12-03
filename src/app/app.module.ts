@@ -13,6 +13,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { CarCardComponent } from './components/car-card/car-card.component';
 import { FabComponent } from './components/fab/fab.component';
+import { MaincardComponent } from './components/maincard/maincard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FabComponent } from './components/fab/fab.component';
     MenuComponent,
     RegisterComponent,
     CarCardComponent,
-    FabComponent
+    FabComponent,
+    MaincardComponent
   ],
   imports: [
     BrowserModule,
