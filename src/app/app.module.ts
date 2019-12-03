@@ -13,6 +13,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { CarCardComponent } from './components/car-card/car-card.component';
 import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
+import { FabComponent } from './components/fab/fab.component';
+import { MaincardComponent } from './components/maincard/maincard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
     MenuComponent,
     RegisterComponent,
     CarCardComponent,
-    KfzAnlegenComponent
+    KfzAnlegenComponent,
+    FabComponent,
+    MaincardComponent
   ],
   imports: [
     BrowserModule,
