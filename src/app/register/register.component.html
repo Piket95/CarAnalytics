@@ -54,22 +54,22 @@
             <!--begin::Form-->
             <form class="kt-login-v1__form kt-form" #login = "ngForm" (ngSubmit) = "onClickSubmit(login.value)" autocomplete="off" id="kt_login_form">
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="Vorname" name="firstname" autocomplete="off" ngModel>
+                <input id="txt_firstname" class="form-control" type="text" placeholder="Vorname" name="firstname" autocomplete="off" ngModel>
               </div>
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="Nachname" name="lastname" autocomplete="off" ngModel>
+                <input id="txt_lastname" class="form-control" type="text" placeholder="Nachname" name="lastname" autocomplete="off" ngModel>
               </div>
               <div class="form-group">
-                <input class="form-control" type="email" placeholder="E-Mail" name="mail" autocomplete="off" ngModel>
+                <input id="txt_mail" class="form-control" type="email" placeholder="E-Mail" name="mail" autocomplete="off" ngModel>
               </div>
               <div class="form-group">
-                <input class="form-control" type="date" placeholder="Geburtstag" name="birthday" autocomplete="off" ngModel>
+                <input id="txt_birthday" class="form-control" type="date" placeholder="Geburtstag" name="birthday" autocomplete="off" ngModel>
               </div>
               <div class="form-group">
-                <input class="form-control" type="password" placeholder="Passwort" name="password" autocomplete="off" ngModel>
+                <input id="txt_pw1" class="form-control" type="password" placeholder="Passwort" name="password" autocomplete="off" ngModel>
               </div>
               <div class="form-group">
-                <input class="form-control" type="password" placeholder="Passwort wiederholen" name="password_two" autocomplete="off" ngModel>
+                <input id="txt_pw2" class="form-control" type="password" placeholder="Passwort wiederholen" name="password_two" autocomplete="off" ngModel>
               </div>
               <div class="kt-login-v1__actions">
                 <input type="submit" class="btn btn-pill btn-elevate" id="kt_login_submit" value="Registrieren" />
