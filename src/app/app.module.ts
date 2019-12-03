@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { CarCardComponent } from './components/car-card/car-card.component';
+import { FabComponent } from './components/fab/fab.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CarCardComponent } from './components/car-card/car-card.component';
     HomeComponent,
     MenuComponent,
     RegisterComponent,
-    CarCardComponent
+    CarCardComponent,
+    FabComponent
   ],
   imports: [
     BrowserModule,
