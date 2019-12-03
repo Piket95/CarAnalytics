@@ -122,7 +122,6 @@ export class KfzAnlegenComponent implements OnInit {
 
     this.http.post('https://api.philippdalheimer.de/request/car/create', fd)
       .subscribe(data => {
-        console.log(data);
 
         if(data['success'] == true){
           this.toastr.success('KFZ wurde erfolgreich erstellt.');
