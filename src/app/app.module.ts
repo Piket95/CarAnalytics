@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { CarCardComponent } from './components/car-card/car-card.component';
+import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
 import { FabComponent } from './components/fab/fab.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
 
@@ -23,6 +24,7 @@ import { MaincardComponent } from './components/maincard/maincard.component';
     MenuComponent,
     RegisterComponent,
     CarCardComponent,
+    KfzAnlegenComponent,
     FabComponent,
     MaincardComponent
   ],
@@ -43,7 +45,7 @@ import { MaincardComponent } from './components/maincard/maincard.component';
       {path: 'mileage', component: HomeComponent},
       {path: 'profile', component: HomeComponent},
       {path: 'settings', component: HomeComponent},
-      {path: 'create/car', component: HomeComponent},
+      {path: 'create/car', component: KfzAnlegenComponent},
       {path: 'maintenance', component: HomeComponent}
       ]),
     FormsModule,
