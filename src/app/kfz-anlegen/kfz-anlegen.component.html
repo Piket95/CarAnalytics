@@ -28,7 +28,7 @@
         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
           <app-maincard>
-            <form (ngSubmit)="onClickSubmit()" autocomplete="off">
+            <form [formGroup]="form" (ngSubmit)="onClickSubmit()" autocomplete="off">
               <div class="form-group">
                 <label>Hersteller</label>
                 <select class="form-control kt-select2 select2" id="manufacturer_id" name="manufacturer_id">
@@ -61,7 +61,7 @@
 
               <div class="form-group">
                 <label>Baujahr</label>
-                <input type="number" maxlength="4" step="1" min="1750" class="form-control" placeholder="2018" id="construction_year">
+                <input type="number" maxlength="4"  step="1" min="1750" class="form-control" placeholder="2018" id="construction_year">
               </div>
 
               <div class="form-group">
@@ -71,12 +71,11 @@
                 </select>
               </div>
 
-              <!-- TODO: Custom Bild implementieren-->
               <div class="form-group">
                 <label>Benutzerdefiniertes Bild <b>(optional)</b></label>
                 <div></div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="custom_image" name="custom_image">
+                  <input (change)="onFileChange($event)" #fileInput type="file" class="custom-file-input" id="custom_image" name="custom_image">
                   <label class="custom-file-label" for="custom_image">Datei auswählen</label>
                   <span class="form-text text-muted">Das beste Ergebnis erzielst du mit dem Bildformat 16:9 (Querformat)</span>
                 </div>

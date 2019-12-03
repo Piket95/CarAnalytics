@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router'; // wird für Navigation gebraucht
@@ -47,9 +47,10 @@ import { MaincardComponent } from './components/maincard/maincard.component';
       {path: 'settings', component: HomeComponent},
       {path: 'create/car', component: KfzAnlegenComponent},
       {path: 'maintenance', component: HomeComponent}
-      ]),
+    ]),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

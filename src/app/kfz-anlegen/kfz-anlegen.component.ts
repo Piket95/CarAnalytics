@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {AppComponent} from '../app.component';
 import { ToastrService } from 'ngx-toastr';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 
 @Component({
@@ -14,13 +15,32 @@ export class KfzAnlegenComponent implements OnInit {
 
   public manufacturers;
   public fuels;
+  form: FormGroup;
+  loading = false;
+  customImage: File = null;
 
   constructor(
     private http: HttpClient,
     private appcomponent: AppComponent,
     private toastr: ToastrService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private fb: FormBuilder
+  ) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      custom_image: null
+    });
+  }
+
+  onFileChange(event) {
+    if (event.target.files.length > 0) {
+      this.customImage = event.target.files[0];
+    }
+  }
 
   ngOnInit() {
     const body = new HttpParams()
@@ -42,6 +62,7 @@ export class KfzAnlegenComponent implements OnInit {
   }
 
   onClickSubmit() {
+
     const manufacturerId: HTMLInputElement = document.getElementById('manufacturer_id') as HTMLInputElement;
     const modelName: HTMLInputElement = document.getElementById('car_name') as HTMLInputElement;
     const mileage: HTMLInputElement = document.getElementById('mileage') as HTMLInputElement;
@@ -49,7 +70,7 @@ export class KfzAnlegenComponent implements OnInit {
     const ps: HTMLInputElement = document.getElementById('ps') as HTMLInputElement;
     const constructionYear: HTMLInputElement = document.getElementById('construction_year') as HTMLInputElement;
     const fuelId: HTMLInputElement = document.getElementById('fuel_id') as HTMLInputElement;
-    const customImage: HTMLInputElement = document.getElementById('custom_image') as HTMLInputElement;
+
 
     // check values
     if (manufacturerId.value === undefined || manufacturerId.value === null || manufacturerId.value === '') {
@@ -81,21 +102,25 @@ export class KfzAnlegenComponent implements OnInit {
       return;
     }
 
-    const body = new HttpParams()
-      .set('api_key', this.appcomponent.api_key)
-      .set('manufacturerId', manufacturerId.value)
-      .set('modelName', modelName.value)
-      .set('mileage', mileage.value)
-      .set('price', price.value)
-      .set('ps', ps.value)
-      .set('constructionYear', constructionYear.value)
-      .set('fuelId', fuelId.value)
-      .set('customImage', customImage.value)
-      .set('user_id', JSON.parse(localStorage.getItem('currentUser'))['id']);
+    console.dir(this.customImage);
 
-    // TODO 02.12.2019 Philipp: CUSTOM Bild auswählen, hochladen und einfügen!
+    const fd = new FormData();
+    if (this.customImage !== null) {
+      fd.append('customImage', this.customImage, this.customImage.name);
+    } else {
+      fd.append('customImage', '');
+    }
+    fd.append('api_key', this.appcomponent.api_key);
+    fd.append('manufacturerId', manufacturerId.value);
+    fd.append('modelName', modelName.value);
+    fd.append('mileage', mileage.value);
+    fd.append('price', price.value);
+    fd.append('ps', ps.value);
+    fd.append('constructionYear', constructionYear.value);
+    fd.append('fuelId', fuelId.value);
+    fd.append('user_id', JSON.parse(localStorage.getItem('currentUser'))['id']);
 
-    this.http.post('https://api.philippdalheimer.de/request/car/create', body)
+    this.http.post('https://api.philippdalheimer.de/request/car/create', fd)
       .subscribe(data => {
         console.log(data);
 
@@ -108,5 +133,4 @@ export class KfzAnlegenComponent implements OnInit {
       });
 
   }
-
 }
