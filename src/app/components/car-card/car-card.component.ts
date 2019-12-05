@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {AppComponent} from '../../app.component';
 import {DOCUMENT} from '@angular/common';
