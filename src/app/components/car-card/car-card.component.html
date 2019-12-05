@@ -17,6 +17,30 @@
       <a data-toggle="tooltip" data-placement="bottom" title="Details" href="javascipt::void(0)" class="btn btn-outline-primary btn-lg btn-icon btn-circle"><i class="fa fa-info"></i></a>
       <a data-toggle="tooltip" data-placement="bottom" title="Wartung" href="javascipt::void(0)" class="btn btn-outline-primary btn-lg btn-icon btn-circle"><i class="fa fa-wrench"></i></a>
       <a data-toggle="tooltip" data-placement="bottom" title="Versicherung" href="javascipt::void(0)" class="btn btn-outline-primary btn-lg btn-icon btn-circle"><i class="fa fa-shield-alt"></i></a>
+      <span data-toggle="tooltip" data-placement="bottom" title="Löschen"  >
+        <button type="button" class="btn btn-outline-danger btn-lg btn-icon btn-circle" data-toggle="modal"
+                [attr.data-target]="'#delete_car_'+ carDetails.user_car_id"><i class="fa fa-trash"></i></button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delete_car_{{carDetails.user_car_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">KFZ <i>{{carDetails.model}}</i> wirklich löschen?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Durch diese Aktion wird das KFZ <i>{{carDetails.model}}</i> dauerhaft gelöscht.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" (click)="deleteCarForUser(carDetails.user_car_id)" data-dismiss="modal">Löschen</button>
+        <button type="button" class="btn btn-brand">Abbrechen</button>
+      </div>
     </div>
   </div>
 </div>
