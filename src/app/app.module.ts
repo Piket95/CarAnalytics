@@ -16,6 +16,7 @@ import { CarCardComponent } from './components/car-card/car-card.component';
 import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
 import { FabComponent } from './components/fab/fab.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MaincardComponent } from './components/maincard/maincard.component';
     CarCardComponent,
     KfzAnlegenComponent,
     FabComponent,
-    MaincardComponent
+    MaincardComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { MaincardComponent } from './components/maincard/maincard.component';
       {path: 'analysis/fuel', component: HomeComponent},
       {path: 'tuev', component: HomeComponent},
       {path: 'mileage', component: HomeComponent},
-      {path: 'profile', component: HomeComponent},
+      {path: 'profile', component: UserProfileComponent},
       {path: 'settings', component: HomeComponent},
       {path: 'create/car', component: KfzAnlegenComponent},
       {path: 'maintenance', component: HomeComponent}
