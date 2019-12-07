@@ -16,6 +16,7 @@ import { CarCardComponent } from './components/car-card/car-card.component';
 import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
 import { FabComponent } from './components/fab/fab.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
+import { TankkostenberechnungComponent } from './tankkostenberechnung/tankkostenberechnung.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MaincardComponent } from './components/maincard/maincard.component';
     CarCardComponent,
     KfzAnlegenComponent,
     FabComponent,
-    MaincardComponent
+    MaincardComponent,
+    TankkostenberechnungComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { MaincardComponent } from './components/maincard/maincard.component';
       {path: 'home', component: HomeComponent},
       {path: 'prognose/costs', component: HomeComponent},
       {path: 'analysis/buy', component: HomeComponent},
-      {path: 'analysis/fuel', component: HomeComponent},
+      {path: 'analysis/fuel', component: TankkostenberechnungComponent},
       {path: 'tuev', component: HomeComponent},
       {path: 'mileage', component: HomeComponent},
       {path: 'profile', component: HomeComponent},

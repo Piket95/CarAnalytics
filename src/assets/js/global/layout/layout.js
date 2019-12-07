@@ -441,4 +441,30 @@ KTUtil.ready(function() {
 $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
   $('.select2').select2();
+
+  if($('.datatable').length)
+  {
+    $('.datatable').DataTable(
+      {
+        "language": {
+          "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+        }
+      }
+    );
+  }
+
+  if($('.datatable_date_0').length)
+  {
+    $('.datatable_date_0').DataTable(
+      {
+        "language": {
+          "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+        },
+        columnDefs: [
+          { type: 'de_date', targets: 0 }
+        ],
+        order: [[ 0, "desc" ]]
+      }
+    );
+  }
 });

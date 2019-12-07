@@ -1,0 +1,18 @@
+.tankkosten_value {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.tankkosten_euro {
+  font-size: 60px;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.tankkosten_value_big {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
