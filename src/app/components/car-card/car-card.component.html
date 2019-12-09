@@ -15,7 +15,7 @@
     <p class="card-text"><span class="badge badge-light">Baujahr {{carDetails.construction_year}}</span></p>
     <div class="car_card_buttons">
       <a data-toggle="tooltip" data-placement="bottom" title="Details" href="javascipt::void(0)" class="btn btn-outline-primary btn-lg btn-icon btn-circle"><i class="fa fa-info"></i></a>
-      <a data-toggle="tooltip" data-placement="bottom" title="Wartung" href="javascipt::void(0)" class="btn btn-outline-primary btn-lg btn-icon btn-circle"><i class="fa fa-wrench"></i></a>
+      <a data-toggle="tooltip" data-placement="bottom" title="Wartungskosten" [routerLink]="['/maintenance', carDetails.user_car_id]" class="btn btn-outline-primary btn-lg btn-icon btn-circle"><i class="fa fa-wrench"></i></a>
       <a data-toggle="tooltip" data-placement="bottom" title="Versicherung" href="javascipt::void(0)" class="btn btn-outline-primary btn-lg btn-icon btn-circle"><i class="fa fa-shield-alt"></i></a>
       <span data-toggle="tooltip" data-placement="bottom" title="Löschen"  >
         <button type="button" class="btn btn-outline-danger btn-lg btn-icon btn-circle" data-toggle="modal"

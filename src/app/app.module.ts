@@ -16,6 +16,9 @@ import { CarCardComponent } from './components/car-card/car-card.component';
 import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
 import { FabComponent } from './components/fab/fab.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
+import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { MaincardComponent } from './components/maincard/maincard.component';
     CarCardComponent,
     KfzAnlegenComponent,
     FabComponent,
-    MaincardComponent
+    MaincardComponent,
+    MaintenanceComponent,
+    ListItemComponent,
+    MaintenanceDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ import { MaincardComponent } from './components/maincard/maincard.component';
       {path: 'profile', component: HomeComponent},
       {path: 'settings', component: HomeComponent},
       {path: 'create/car', component: KfzAnlegenComponent},
-      {path: 'maintenance', component: HomeComponent}
+      {path: 'maintenance', redirectTo: '/home', pathMatch: 'full'},
+      {path: 'maintenance/:user_car_id', component: MaintenanceComponent},
+      {path: 'maintenance_details', component: MaintenanceDetailsComponent}
     ]),
     FormsModule,
     HttpClientModule,
