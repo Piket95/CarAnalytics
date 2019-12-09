@@ -24,22 +24,22 @@
           <h4 class="kt-menu__section-text">Allgemein</h4>
           <i class="kt-menu__section-icon flaticon-more-v2"></i>
         </li>
-        <li class="kt-menu__item kt-menu__item--active" aria-haspopup="true"><a href="" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-setup"></i><span class="kt-menu__link-text">Dashboard</span></a></li>
+        <li [ngClass]="active === 'dashboard' ? 'kt-menu__item--active' : ''" class="kt-menu__item" aria-haspopup="true"><a href="" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-setup"></i><span class="kt-menu__link-text">Dashboard</span></a></li>
 
         <li class="kt-menu__section ">
           <h4 class="kt-menu__section-text">Analyse</h4>
           <i class="kt-menu__section-icon flaticon-more-v2"></i>
         </li>
-        <li class="kt-menu__item " aria-haspopup="true"><a href="/prognose/costs" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-chart-pie"></i><span class="kt-menu__link-text">Kosten-Prognose</span></a></li>
-        <li class="kt-menu__item " aria-haspopup="true"><a href="/analysis/buy" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-search-dollar"></i><span class="kt-menu__link-text">Kaufanalyse</span></a></li>
-        <li class="kt-menu__item " aria-haspopup="true"><a href="/analysis/fuel" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-gas-pump"></i><span class="kt-menu__link-text">Tankkosten-Analyse</span></a></li>
+        <li [ngClass]="active === 'kostenprognose' ? 'kt-menu__item--active' : ''"  class="kt-menu__item " aria-haspopup="true"><a href="/prognose/costs" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-chart-pie"></i><span class="kt-menu__link-text">Kosten-Prognose</span></a></li>
+        <li [ngClass]="active === 'kaufanalyse' ? 'kt-menu__item--active' : ''"  class="kt-menu__item " aria-haspopup="true"><a href="/analysis/buy" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-search-dollar"></i><span class="kt-menu__link-text">Kaufanalyse</span></a></li>
+        <li [ngClass]="active === 'tankkostenanalyse' ? 'kt-menu__item--active' : ''"  class="kt-menu__item " aria-haspopup="true"><a href="/analysis/fuel" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-gas-pump"></i><span class="kt-menu__link-text">Tankkosten-Analyse</span></a></li>
 
         <li class="kt-menu__section ">
           <h4 class="kt-menu__section-text">Tracking</h4>
           <i class="kt-menu__section-icon flaticon-more-v2"></i>
         </li>
-        <li class="kt-menu__item " aria-haspopup="true"><a href="/tuev" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-tools"></i><span class="kt-menu__link-text">TÜV</span></a></li>
-        <li class="kt-menu__item " aria-haspopup="true"><a href="/mileage" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-tachometer-alt"></i><span class="kt-menu__link-text">Kilometerzähler</span></a></li>
+        <li [ngClass]="active === 'tuev' ? 'kt-menu__item--active' : ''"  class="kt-menu__item " aria-haspopup="true"><a href="/tuev" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-tools"></i><span class="kt-menu__link-text">TÜV</span></a></li>
+        <li [ngClass]="active === 'kilometerzaehler' ? 'kt-menu__item--active' : ''"  class="kt-menu__item " aria-haspopup="true"><a href="/mileage" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-tachometer-alt"></i><span class="kt-menu__link-text">Kilometerzähler</span></a></li>
       </ul>
     </div>
   </div>
@@ -54,7 +54,7 @@
       </div>
 
       <div data-toggle="kt-tooltip" data-skin="dark" title="Einstellungen" class="kt-aside__footer-item">
-        <a href="/setings" class="btn btn-icon"><i class="flaticon2-gear"></i></a>
+        <a href="/settings" class="btn btn-icon"><i class="flaticon2-gear"></i></a>
       </div>
       <div data-toggle="kt-tooltip" data-skin="dark" title="Abmelden" class="kt-aside__footer-item">
         <a href="#" (click)="logout()" class="btn btn-icon"><i class="fas fa-sign-out-alt"></i></a>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {AppComponent} from '../../app.component';
 
@@ -10,6 +10,8 @@ import {AppComponent} from '../../app.component';
 export class MenuComponent implements OnInit {
 
   private userdata;
+  @Input()
+  active = '';
 
   constructor( private router: Router ) {
     if (localStorage.hasOwnProperty('currentUser')) {

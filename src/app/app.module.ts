@@ -19,6 +19,7 @@ import { MaincardComponent } from './components/maincard/maincard.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-d
     MaincardComponent,
     MaintenanceComponent,
     ListItemComponent,
-    MaintenanceDetailsComponent
+    MaintenanceDetailsComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,7 @@ import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-d
       {path: 'analysis/fuel', component: HomeComponent},
       {path: 'tuev', component: HomeComponent},
       {path: 'mileage', component: HomeComponent},
-      {path: 'profile', component: HomeComponent},
+      {path: 'profile', component: UserProfileComponent},
       {path: 'settings', component: HomeComponent},
       {path: 'create/car', component: KfzAnlegenComponent},
       {path: 'maintenance', redirectTo: '/home', pathMatch: 'full'},
