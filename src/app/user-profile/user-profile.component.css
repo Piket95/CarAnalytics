@@ -1,11 +1,3 @@
-#grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto;
-
-  font-size: 15px;
-}
-
 #profileImage {
   display: block;
   margin-left: auto;

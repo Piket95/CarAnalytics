@@ -28,20 +28,19 @@
         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
           <app-maincard>
-            <div id="grid">
-              <div style="grid-column: 2; text-align: center;">
+            <div style="text-align: center;">
 
-                <img id="profileImage" width="200px" height="200px" src="{{userData.profile_picture}}">
-                <br><br><br><br>
-                <p>{{ userData.firstname }} {{ userData.lastname }}</p>
-                <p>{{ userData.birthday | date : "dd.MM.yyyy" }}</p>
-                <p>Registriert am: {{ userData.create_timestamp | date : "dd.MM.yyyy" }}</p>
-                <p>Lieblingsmarke: <ng-template *ngIf="checkEmpty(userData.fav_brand) === false, else empty">{{ userData.fav_brand }}</ng-template></p>
-                <p>Lieblingsauto: <ng-template *ngIf="checkEmpty(userData.fav_car) === false, else empty">{{ userData.fav_car }}</ng-template></p>
+              <img id="profileImage" width="200px" height="200px" src="{{userData.profile_picture}}">
+              <br><br><br><br>
+              <h3>{{ userData.firstname }} {{ userData.lastname }}</h3>
+              <br>
+              <p>Geburtstag: {{ userData.birthday | date : "dd.MM.yyyy" }}</p>
+              <p>Registriert am: {{ userData.create_timestamp | date : "dd.MM.yyyy" }}</p>
+              <p>Lieblingsmarke: <ng-template *ngIf="checkEmpty(userData.fav_brand) === false, else empty">{{ userData.fav_brand }}</ng-template></p>
+              <p>Lieblingsauto: <ng-template *ngIf="checkEmpty(userData.fav_car) === false, else empty">{{ userData.fav_car }}</ng-template></p>
 
-                <ng-template #empty><i>Nicht festgelegt</i></ng-template>
-                <br><br><br>
-              </div>
+              <ng-template #empty><i>Nicht festgelegt</i></ng-template>
+              <br><br><br>
             </div>
           </app-maincard>
 
