@@ -1,0 +1,72 @@
+<!-- begin:: Root -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+    <!-- begin:: Page -->
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+      <!-- begin:: Aside -->
+      <app-menu></app-menu>
+      <!-- end:: Aside -->
+
+      <!-- begin:: Wrapper -->
+      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+        <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+          <!-- begin:: Subheader -->
+          <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+            <div class="kt-container  kt-container--fluid ">
+              <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">Wartungskosten Details</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- end:: Subheader -->
+
+          <!-- begin:: Content -->
+          <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+            <app-maincard>
+              <h3>{{title}}</h3>
+              <br>
+              <table style="width: 75%;">
+                <tr *ngFor="let item of items">
+                  <td>- {{item.title}}</td>
+                  <td style="float: right;">{{item.price}} €</td>
+                </tr>
+                <br>
+                <tr>
+                  <td></td>
+                  <td style="float: right; font-size: 20px;"><b>{{sum}} €</b></td>
+                </tr>
+              </table>
+            </app-maincard>
+
+          </div>
+
+          <!-- end:: Content -->
+        </div>
+
+        <!-- begin:: Footer -->
+        <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
+          <div class="kt-container  kt-container--fluid ">
+            <div class="kt-footer__copyright">
+              <a href="#">&copy; Dennis Adam & Philipp Dalheimer</a>
+            </div>
+            <div class="kt-footer__menu">
+              <a href="#" target="_blank" class="kt-footer__menu-link kt-link">About</a>
+              <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
+              <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- end:: Footer -->
+      </div>
+
+      <!-- end:: Wrapper -->
+    </div>
+
+    <!-- end:: Page -->
+  </div>
