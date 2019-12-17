@@ -37,7 +37,6 @@ import { InsuranceComponent } from './insurance/insurance.component';
     FabComponent,
     MaincardComponent,
     TankkostenberechnungComponent,
-    MaincardComponent,
     MaintenanceComponent,
     ListItemComponent,
     MaintenanceDetailsComponent,
