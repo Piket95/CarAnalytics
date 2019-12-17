@@ -21,6 +21,7 @@ import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CostPrognoseComponent } from './cost-prognose/cost-prognose.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 
 @NgModule({
@@ -38,6 +39,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
     ListItemComponent,
     MaintenanceDetailsComponent,
     UserProfileComponent,
+    CostPrognoseComponent,
     InsuranceComponent
   ],
   imports: [
@@ -45,23 +47,24 @@ import { InsuranceComponent } from './insurance/insurance.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
-      {path: '', component: LoginComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent},
+      { path: '', component: LoginComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
 
-      {path: 'home', component: HomeComponent},
-      {path: 'prognose/costs', component: HomeComponent},
-      {path: 'analysis/buy', component: HomeComponent},
-      {path: 'analysis/fuel', component: HomeComponent},
-      {path: 'tuev', component: HomeComponent},
-      {path: 'mileage', component: HomeComponent},
-      {path: 'profile', component: UserProfileComponent},
-      {path: 'settings', component: HomeComponent},
-      {path: 'create/car', component: KfzAnlegenComponent},
-      {path: 'maintenance', redirectTo: '/home', pathMatch: 'full'},
-      {path: 'maintenance/:user_car_id', component: MaintenanceComponent},
-      {path: 'maintenance_details', component: MaintenanceDetailsComponent},
-      {path: 'insurance/:user_car_id', component: InsuranceComponent}
+      { path: 'home', component: HomeComponent },
+      { path: 'prognose/costs', component: HomeComponent },
+      { path: 'analysis/buy', component: HomeComponent },
+      { path: 'analysis/fuel', component: HomeComponent },
+      { path: 'tuev', component: HomeComponent },
+      { path: 'mileage', component: HomeComponent },
+      { path: 'profile', component: UserProfileComponent },
+      { path: 'settings', component: HomeComponent },
+      { path: 'create/car', component: KfzAnlegenComponent },
+      { path: 'maintenance', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'maintenance/:user_car_id', component: MaintenanceComponent },
+      { path: 'maintenance_details', component: MaintenanceDetailsComponent },
+      { path: 'insurance/:user_car_id', component: InsuranceComponent },
+      { path: 'maintenance_details', component: MaintenanceDetailsComponent }
     ]),
     FormsModule,
     HttpClientModule,
