@@ -1,0 +1,88 @@
+<!-- begin:: Root -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+  <!-- begin:: Page -->
+  <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+    <!-- begin:: Aside -->
+    <app-menu></app-menu>
+    <!-- end:: Aside -->
+
+    <!-- begin:: Wrapper -->
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+      <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+        <!-- begin:: Subheader -->
+        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+          <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+              <h3 class="kt-subheader__title">Kostenprognose</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- end:: Subheader -->
+
+        <!-- begin:: Content -->
+        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+          <app-maincard>
+            <div style="text-align: center;">
+              <h2>{{sum}} €</h2>
+              <p>Prognose für {{nextMonth}}</p>
+            </div>
+            <br>
+            <!-- Datatable -->
+            <div class="dataTables_wrapper dt-bootstrap4 no-footer">
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline" id="kt_table_1" role="grid" aria-describedby="kt_table_1_info">
+                    <thead>
+                      <tr role="row">
+                        <th class="dt-right sorting_disabled" rowspan="1" colspan="1" aria-label="Record ID">Bezeichnung</th>
+                        <th class="dt-right sorting_disabled" rowspan="1" colspan="1" aria-label="Record ID">Anzahl</th>
+                        <th class="dt-right sorting_disabled" rowspan="1" colspan="1" aria-label="Record ID">Kosten</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr role="row" *ngFor="let item of beispiel">
+                        <td>{{item.bezeichnung}}</td>
+                        <td>{{item.anzahl}}</td>
+                        <td>{{item.kosten}} €</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" (click)="clickPrint()"><i style="margin-right: 5px" class="fa fa-print"></i>Drucken</button>
+          </app-maincard>
+
+        </div>
+
+        <!-- end:: Content -->
+      </div>
+
+      <!-- begin:: Footer -->
+      <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
+        <div class="kt-container  kt-container--fluid ">
+          <div class="kt-footer__copyright">
+            <a href="#">&copy; Dennis Adam & Philipp Dalheimer</a>
+          </div>
+          <div class="kt-footer__menu">
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">About</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- end:: Footer -->
+    </div>
+
+    <!-- end:: Wrapper -->
+  </div>
+
+  <!-- end:: Page -->
+</div>

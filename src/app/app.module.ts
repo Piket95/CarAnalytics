@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router'; // wird für Navigation gebraucht
 import { ToastrModule } from 'ngx-toastr'; // für Notifications
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // für Notifications
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Bootstrap modules: https://ng-bootstrap.github.io/
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +18,12 @@ import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
 import { FabComponent } from './components/fab/fab.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
 import { TankkostenberechnungComponent } from './tankkostenberechnung/tankkostenberechnung.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
+import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CostPrognoseComponent } from './cost-prognose/cost-prognose.component';
+import { InsuranceComponent } from './insurance/insurance.component';
 
 @NgModule({
   declarations: [
@@ -29,31 +36,43 @@ import { TankkostenberechnungComponent } from './tankkostenberechnung/tankkosten
     KfzAnlegenComponent,
     FabComponent,
     MaincardComponent,
-    TankkostenberechnungComponent
+    TankkostenberechnungComponent,
+    MaincardComponent,
+    MaintenanceComponent,
+    ListItemComponent,
+    MaintenanceDetailsComponent,
+    UserProfileComponent,
+    CostPrognoseComponent,
+    InsuranceComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
-      {path: '', component: LoginComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent},
+      { path: '', component: LoginComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
 
-      {path: 'home', component: HomeComponent},
-      {path: 'prognose/costs', component: HomeComponent},
-      {path: 'analysis/buy', component: HomeComponent},
-      {path: 'analysis/fuel', component: TankkostenberechnungComponent},
-      {path: 'tuev', component: HomeComponent},
-      {path: 'mileage', component: HomeComponent},
-      {path: 'profile', component: HomeComponent},
-      {path: 'settings', component: HomeComponent},
-      {path: 'create/car', component: KfzAnlegenComponent},
-      {path: 'maintenance', component: HomeComponent}
+      { path: 'home', component: HomeComponent },
+      { path: 'prognose/costs', component: HomeComponent },
+      { path: 'analysis/buy', component: HomeComponent },
+      { path: 'analysis/fuel', component: TankkostenberechnungComponent },
+      { path: 'tuev', component: HomeComponent },
+      { path: 'mileage', component: HomeComponent },
+      { path: 'profile', component: UserProfileComponent },
+      { path: 'settings', component: HomeComponent },
+      { path: 'create/car', component: KfzAnlegenComponent },
+      { path: 'maintenance', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'maintenance/:user_car_id', component: MaintenanceComponent },
+      { path: 'maintenance_details', component: MaintenanceDetailsComponent },
+      { path: 'insurance/:user_car_id', component: InsuranceComponent },
+      { path: 'maintenance_details', component: MaintenanceDetailsComponent }
     ]),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
