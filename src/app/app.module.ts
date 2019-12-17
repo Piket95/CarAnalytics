@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router'; // wird für Navigation gebraucht
 import { ToastrModule } from 'ngx-toastr'; // für Notifications
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // für Notifications
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Bootstrap modules: https://ng-bootstrap.github.io/
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -64,7 +65,8 @@ import { InsuranceComponent } from './insurance/insurance.component';
     ]),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
