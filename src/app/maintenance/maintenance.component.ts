@@ -11,6 +11,7 @@ export class MaintenanceComponent implements OnInit {
 
   user_car_id: number;
 
+  //Lediglich ein Beispiel fest reinprogrammiert. Wird ersetzt durch die Daten der API
   private listItem: ListItem = {
     title: 'placeholder',
     date: '2018-08-02',

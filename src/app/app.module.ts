@@ -20,6 +20,7 @@ import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { InsuranceComponent } from './insurance/insurance.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     MaintenanceComponent,
     ListItemComponent,
     MaintenanceDetailsComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    InsuranceComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
       {path: 'create/car', component: KfzAnlegenComponent},
       {path: 'maintenance', redirectTo: '/home', pathMatch: 'full'},
       {path: 'maintenance/:user_car_id', component: MaintenanceComponent},
-      {path: 'maintenance_details', component: MaintenanceDetailsComponent}
+      {path: 'maintenance_details', component: MaintenanceDetailsComponent},
+      {path: 'insurance/:user_car_id', component: InsuranceComponent}
     ]),
     FormsModule,
     HttpClientModule,
