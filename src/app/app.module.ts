@@ -17,6 +17,7 @@ import { CarCardComponent } from './components/car-card/car-card.component';
 import { KfzAnlegenComponent } from './kfz-anlegen/kfz-anlegen.component';
 import { FabComponent } from './components/fab/fab.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
+import { TankkostenberechnungComponent } from './tankkostenberechnung/tankkostenberechnung.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
@@ -35,6 +36,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
     KfzAnlegenComponent,
     FabComponent,
     MaincardComponent,
+    TankkostenberechnungComponent,
     MaintenanceComponent,
     ListItemComponent,
     MaintenanceDetailsComponent,
@@ -54,7 +56,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
       { path: 'home', component: HomeComponent },
       { path: 'prognose/costs', component: HomeComponent },
       { path: 'analysis/buy', component: HomeComponent },
-      { path: 'analysis/fuel', component: HomeComponent },
+      { path: 'analysis/fuel', component: TankkostenberechnungComponent },
       { path: 'tuev', component: HomeComponent },
       { path: 'mileage', component: HomeComponent },
       { path: 'profile', component: UserProfileComponent },
