@@ -1,0 +1,94 @@
+<!--{{user_car_id}} <br>{{user_id}}-->
+<!-- begin:: Root -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+  <!-- begin:: Page -->
+  <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+    <!-- begin:: Aside -->
+    <app-menu active="tankkostenanalyse"></app-menu>
+    <!-- end:: Aside -->
+
+    <!-- begin:: Wrapper -->
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+      <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+        <!-- begin:: Subheader -->
+        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+          <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+              <h3 class="kt-subheader__title">Tankung hinzufügen - {{model_name}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- end:: Subheader -->
+
+        <!-- begin:: Content -->
+        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+          <app-maincard>
+            <form autocomplete="off">
+              <div class="form-group">
+                <label>Datum</label>
+                <input type="date" class="form-control" id="datum">
+              </div>
+
+              <div class="form-group">
+                <label>Beschreibung</label>
+                <textarea class="form-control" id="beschreibung"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Liter</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-gas-pump"></i></span></div>
+                  <input type="number" class="form-control" min="0.1" step="0.1" id="liter">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Preis</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text">&euro;</span></div>
+                  <input type="number" max="1000" step="0.01" min="1" class="form-control" id="preis">
+                </div>
+              </div>
+
+              <div class="kt-portlet__foot">
+                <div class="kt-form__actions">
+                  <button type="submit" class="btn btn-primary">Tankung hinzufügen</button>
+                  <a [routerLink]="['/analysis/fuel']" style="float: right" class="btn btn-secondary">Abbrechen</a>
+                </div>
+              </div>
+            </form>
+          </app-maincard>
+
+        </div>
+
+        <!-- end:: Content -->
+      </div>
+
+      <!-- begin:: Footer -->
+      <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
+        <div class="kt-container  kt-container--fluid ">
+          <div class="kt-footer__copyright">
+            <a href="#">&copy; Dennis Adam & Philipp Dalheimer</a>
+          </div>
+          <div class="kt-footer__menu">
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">About</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- end:: Footer -->
+    </div>
+
+    <!-- end:: Wrapper -->
+  </div>
+
+  <!-- end:: Page -->
+</div>

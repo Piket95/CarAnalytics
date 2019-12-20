@@ -24,6 +24,7 @@ import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-d
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CostPrognoseComponent } from './cost-prognose/cost-prognose.component';
 import { InsuranceComponent } from './insurance/insurance.component';
+import { TankunghinzufuegenComponent } from './tankunghinzufuegen/tankunghinzufuegen.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { InsuranceComponent } from './insurance/insurance.component';
     MaintenanceDetailsComponent,
     UserProfileComponent,
     CostPrognoseComponent,
-    InsuranceComponent
+    InsuranceComponent,
+    TankunghinzufuegenComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
       { path: 'prognose/costs', component: HomeComponent },
       { path: 'analysis/buy', component: HomeComponent },
       { path: 'analysis/fuel', component: TankkostenberechnungComponent },
+      { path: 'analysis/fuel/add/:user_car_id', component: TankunghinzufuegenComponent },
       { path: 'tuev', component: HomeComponent },
       { path: 'mileage', component: HomeComponent },
       { path: 'profile', component: UserProfileComponent },
