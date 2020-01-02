@@ -24,6 +24,7 @@ import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-d
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CostPrognoseComponent } from './cost-prognose/cost-prognose.component';
 import { InsuranceComponent } from './insurance/insurance.component';
+import { TankunghinzufuegenComponent } from './tankunghinzufuegen/tankunghinzufuegen.component';
 import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.component';
 
 @NgModule({
@@ -44,6 +45,7 @@ import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.c
     UserProfileComponent,
     CostPrognoseComponent,
     InsuranceComponent,
+    TankunghinzufuegenComponent,
     KilometerzaehlerComponent
   ],
   imports: [
@@ -59,6 +61,7 @@ import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.c
       { path: 'prognose/costs', component: HomeComponent },
       { path: 'analysis/buy', component: HomeComponent },
       { path: 'analysis/fuel', component: TankkostenberechnungComponent },
+      { path: 'analysis/fuel/add/:user_car_id', component: TankunghinzufuegenComponent },
       { path: 'tuev', component: HomeComponent },
       { path: 'mileage', component: KilometerzaehlerComponent },
       { path: 'profile', component: UserProfileComponent },
