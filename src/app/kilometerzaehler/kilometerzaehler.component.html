@@ -1,0 +1,97 @@
+<!-- begin:: Root -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+  <!-- begin:: Page -->
+  <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+    <!-- begin:: Aside -->
+    <app-menu active="kilometerzaehler"></app-menu>
+    <!-- end:: Aside -->
+
+    <!-- begin:: Wrapper -->
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+      <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+        <!-- begin:: Subheader -->
+        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+          <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+              <h3 class="kt-subheader__title">Kilometerzähler</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- end:: Subheader -->
+
+        <!-- begin:: Content -->
+        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+          <!-- Keine app-maincard, da custom header -->
+          <div class="row">
+            <div class="col-lg-11">
+              <div class="kt-portlet">
+                <div class="kt-portlet__head">
+                  <div class="kt-portlet__head-label">
+                  </div>
+                  <div class="kt-portlet__head-toolbar">
+                    <div class="kt-portlet__head-group" style="display: flex">
+                      <span>
+                        <label style="padding-right: 10px">KFZ: </label>
+                        <select style="min-width: 120px;" class="form-control kt-select2 select2" id="kfz" name="kfz">
+                          <option value="">Auto 1</option>
+                          <option value="">Auto 2</option>
+                          <option value="">Auto 3</option>
+                        </select>
+                      </span>
+                      <!-- Todo: Wenn Speichern gedrückt wurde, im hintergrund per API speichern + Nachricht ausgeben, wenns gespeichert wurde // bei checkSave() sollte auch noch die Auto ID übergeben werden!? -->
+                      <a (click)="(editStatus ? editStatus = false : editStatus = true); (editStatus ? btnIcon = 'fa-save' : btnIcon = 'fa-edit'); checkSave(editStatus)" style="margin-left: 10px" class="btn btn-secondary btn-icon" ><i class="fa {{btnIcon}}"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="kt-portlet__body">
+                  <div class="kt-portlet__content">
+
+                    <div class="km_zaehler">
+                      <input #firstInput type="text" maxlength="1" minlength="1" value="{{0}}" [disabled]="!editStatus" class="km">
+                      <input type="text" maxlength="1" minlength="1" value="{{0}}" [disabled]="!editStatus" class="km">
+                      <input type="text" maxlength="1" minlength="1" value="{{0}}" [disabled]="!editStatus" class="km">
+                      <input type="text" maxlength="1" minlength="1" value="{{0}}" [disabled]="!editStatus" class="km">
+                      <input type="text" maxlength="1" minlength="1" value="{{0}}" [disabled]="!editStatus" class="km">
+                      <input type="text" maxlength="1" minlength="1" value="{{0}}" [disabled]="!editStatus" class="km">
+                      <input type="text" maxlength="1" minlength="1" value="{{0}}" [disabled]="!editStatus" class="km">
+                      <span class="km_indicator">km</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end:: Content -->
+      </div>
+
+      <!-- begin:: Footer -->
+      <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
+        <div class="kt-container  kt-container--fluid ">
+          <div class="kt-footer__copyright">
+            <a href="#">&copy; Dennis Adam & Philipp Dalheimer</a>
+          </div>
+          <div class="kt-footer__menu">
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">About</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- end:: Footer -->
+    </div>
+
+    <!-- end:: Wrapper -->
+  </div>
+
+  <!-- end:: Page -->
+</div>
