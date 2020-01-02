@@ -52,7 +52,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
       { path: 'register', component: RegisterComponent },
 
       { path: 'home', component: HomeComponent },
-      { path: 'prognose/costs', component: HomeComponent },
+      { path: 'prognose/costs', component: CostPrognoseComponent },
       { path: 'analysis/buy', component: HomeComponent },
       { path: 'analysis/fuel', component: HomeComponent },
       { path: 'tuev', component: HomeComponent },
