@@ -25,6 +25,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CostPrognoseComponent } from './cost-prognose/cost-prognose.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { TankunghinzufuegenComponent } from './tankunghinzufuegen/tankunghinzufuegen.component';
+import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TankunghinzufuegenComponent } from './tankunghinzufuegen/tankunghinzufu
     UserProfileComponent,
     CostPrognoseComponent,
     InsuranceComponent,
-    TankunghinzufuegenComponent
+    TankunghinzufuegenComponent,
+    KilometerzaehlerComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,7 @@ import { TankunghinzufuegenComponent } from './tankunghinzufuegen/tankunghinzufu
       { path: 'analysis/fuel', component: TankkostenberechnungComponent },
       { path: 'analysis/fuel/add/:user_car_id', component: TankunghinzufuegenComponent },
       { path: 'tuev', component: HomeComponent },
-      { path: 'mileage', component: HomeComponent },
+      { path: 'mileage', component: KilometerzaehlerComponent },
       { path: 'profile', component: UserProfileComponent },
       { path: 'settings', component: HomeComponent },
       { path: 'create/car', component: KfzAnlegenComponent },

@@ -1,0 +1,43 @@
+.km_zaehler {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.km_zaehler .km_indicator {
+  font-family: monospace;
+  font-size: 25px;
+  color: #020202;
+  position: absolute;
+  margin-top: 66px;
+}
+
+.km_zaehler input {
+  max-width: 50px;
+  text-align: center;
+  font-size: 60px;
+  margin: 0px 6px;
+}
+
+.km_zaehler input:enabled {
+  background: #cecece;
+}
+
+@media only screen and (max-width: 600px) {
+  .km_zaehler input {
+    max-width: 28px;
+    text-align: center;
+    font-size: 30px;
+    margin: 0px 3px;
+  }
+
+  .km_zaehler .km_indicator {
+    font-family: monospace;
+    font-size: 25px;
+    color: #020202;
+    position: absolute;
+    margin-top: 21px;
+  }
+}
