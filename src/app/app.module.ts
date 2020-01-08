@@ -26,6 +26,7 @@ import { CostPrognoseComponent } from './cost-prognose/cost-prognose.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { TankunghinzufuegenComponent } from './tankunghinzufuegen/tankunghinzufuegen.component';
 import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.component';
+import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.c
     CostPrognoseComponent,
     InsuranceComponent,
     TankunghinzufuegenComponent,
-    KilometerzaehlerComponent
+    KilometerzaehlerComponent,
+    EditUserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.c
       { path: 'maintenance/:user_car_id', component: MaintenanceComponent },
       { path: 'maintenance_details', component: MaintenanceDetailsComponent },
       { path: 'insurance/:user_car_id', component: InsuranceComponent },
-      { path: 'maintenance_details', component: MaintenanceDetailsComponent }
+      { path: 'maintenance_details', component: MaintenanceDetailsComponent },
+      { path: 'profile/edit', component: EditUserProfileComponent }
     ]),
     FormsModule,
     HttpClientModule,
