@@ -58,7 +58,7 @@ import { KilometerzaehlerComponent } from './kilometerzaehler/kilometerzaehler.c
       { path: 'register', component: RegisterComponent },
 
       { path: 'home', component: HomeComponent },
-      { path: 'prognose/costs', component: HomeComponent },
+      { path: 'prognose/costs', component: CostPrognoseComponent },
       { path: 'analysis/buy', component: HomeComponent },
       { path: 'analysis/fuel', component: TankkostenberechnungComponent },
       { path: 'analysis/fuel/add/:user_car_id', component: TankunghinzufuegenComponent },
