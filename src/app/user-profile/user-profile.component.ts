@@ -17,6 +17,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.userData);
+    console.log(this.userData.fav_brand);
   }
 
   checkEmpty(item: string) {

@@ -65,13 +65,13 @@
 
               <div class="form-group">
                 <label for="password">Aktuelles Passwort bestätigen</label>
-                <input type="password" class="form-control" name="password" ngModel>
+                <input type="password" class="form-control is-valid" name="password" ngModel>
               </div>
 
               <div class="kt-portlet__foot">
                 <div class="kt-form__actions">
                   <button type="submit" class="btn btn-primary">Änderungen anwenden</button>
-                  <a href="/profile" style="float: right" class="btn btn-secondary">Abbrechen</a>
+                  <a [routerLink]="['/profile']" style="float: right" class="btn btn-secondary">Abbrechen</a>
                 </div>
               </div>
             </form>
