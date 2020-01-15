@@ -1,3 +1,6 @@
+import { ToastrService } from 'ngx-toastr';
+import { AppComponent } from './../app.component';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Insurance } from './insurance';
@@ -15,7 +18,10 @@ export class InsuranceComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private appcomponent: AppComponent,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -25,7 +31,21 @@ export class InsuranceComponent implements OnInit {
 
     this.user_car_id = this.route.params['_value']['user_car_id'];
 
-    this.insurance = new Insurance(this.user_car_id);
+    // this.insurance = new Insurance(this.user_car_id);
+
+    const body = new HttpParams()
+    .set('api_key', this.appcomponent.api_key);
+
+    this.http.post('https://api.philippdalheimer.de/request/usercar/insurance/get/' + this.user_car_id, body)
+    .subscribe(data => {
+      // console.log(data);
+
+      if (data['success'] == true){
+
+        this.insurance = new Insurance(this.user_car_id, data);
+
+      }
+    });
   }
 
 }
