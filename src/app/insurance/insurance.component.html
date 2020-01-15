@@ -30,10 +30,25 @@
           <app-maincard>
             <h3>{{insurance.modelname}}</h3>
             <br>
-            <p>Versicherungsfirma: {{insurance.insuranceCompany}}</p>
-            <p>Kaskoversicherung: {{insurance.insuranceType}}</p>
-            <p>Schadensklasse: {{insurance.damageClass}}</p>
-            <p>Kosten pro Jahr: {{insurance.costPerYear}} €</p>
+
+            <table style="font-size: large;">
+              <tr>
+                <td>Versicherungsfirma:</td>
+                <td style="padding: 5px 20px;">{{insurance.insuranceCompany}}</td>
+              </tr>
+              <tr>
+                <td>Kaskoversicherung:</td>
+                <td style="padding: 5px 20px;">{{insurance.insuranceType}}</td>
+              </tr>
+              <tr>
+                <td>Schadensklasse:</td>
+                <td style="padding: 5px 20px;">{{insurance.damageClass}}</td>
+              </tr>
+              <tr>
+                <td>Kosten pro Jahr:</td>
+                <td style="padding: 5px 20px;">{{insurance.costPerYear}}</td>
+              </tr>
+            </table>
           </app-maincard>
 
         </div>

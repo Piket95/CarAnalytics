@@ -6,24 +6,31 @@ export class Insurance {
   insuranceCompany: string;
   insuranceType: string;
   damageClass: string;
-  costPerYear: number;
+  costPerYear: string;
 
-  constructor(userCarID: number) {
+  constructor(userCarID: number, data) {
 
     this.userCarID = userCarID;
 
-    this.getInsuranceData(this.userCarID);
+    console.log(data);
 
-  }
+    if (data['success'] == true && data['details']['insurance_id'] !== null) {
 
-  getInsuranceData(id: number) {
-    // Get the Insurance Data from API of that specific User Car
+      this.modelname = data['details']['model'];
+      this.insuranceCompany = data['details']['name'];
+      this.insuranceType = data['details']['type'];
+      this.damageClass = data['details']['class'];
+      this.costPerYear = data['details']['cost_per_year'] + ' €';
 
-    //Presets:
-    this.modelname = "Test-Tesla (" + this.userCarID + ")";
-    this.insuranceCompany = "Test-Firma";
-    this.insuranceType = "Test-Vollkasko"
-    this.damageClass = "Test-Schadensklasse";
-    this.costPerYear = 2232.23;
+    } else {
+
+      this.modelname = data['details']['model'];
+      this.insuranceCompany = 'Nicht festgelegt';
+      this.insuranceType = 'Nicht festgelegt';
+      this.damageClass = 'Nicht festgelegt';
+      this.costPerYear = 'Nicht festgelegt';
+
+    }
+
   }
 }
