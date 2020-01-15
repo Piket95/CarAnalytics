@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     .subscribe(data => {
       console.log(data);
 
-      if (data['success'] == true){
+      if (data['success'] == true) {
 
         localStorage.setItem('currentUser', JSON.stringify(data['user']));
         // console.log(JSON.parse(localStorage.getItem('currentUser')));

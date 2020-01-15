@@ -1,0 +1,106 @@
+<!-- begin:: Root -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+
+  <!-- begin:: Page -->
+  <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+    <!-- begin:: Aside -->
+    <app-menu></app-menu>
+    <!-- end:: Aside -->
+
+    <!-- begin:: Wrapper -->
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+      <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+        <!-- begin:: Subheader -->
+        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+          <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+              <h3 class="kt-subheader__title">Benutzerprofil bearbeiten</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- end:: Subheader -->
+
+        <!-- begin:: Content -->
+        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+          <app-maincard>
+            <form #editProfile="ngForm" (ngSubmit)="onClickSubmit(editProfile.value)" autocomplete="off">
+              <div class="form-group">
+                <label for="firstname">Vorname</label>
+                <input type="text" class="form-control" placeholder="Nicht angegeben" name="firstname" [(ngModel)]="firstname">
+              </div>
+
+              <div class="form-group">
+                <label for="lastname">Nachname</label>
+                <input type="text" class="form-control" placeholder="Nicht angegeben" name="lastname" [(ngModel)]="lastname">
+              </div>
+
+              <div class="form-group">
+                <label for="fav-brand">Lieblingsmarke</label>
+                <input type="text" class="form-control" placeholder="Nicht angegeben" name="favBrand" [(ngModel)]="favBrand">
+              </div>
+
+              <div class="form-group">
+                <label for="fav-car">Lieblingsauto</label>
+                <input type="text" class="form-control" placeholder="Nicht angegeben" name="favCar" [(ngModel)]="favCar">
+              </div>
+
+              <hr>
+
+              <div class="form-group">
+                <label for="newPW1">Neues Passwort</label>
+                <input type="password" class="form-control" placeholder="optional" name="newPW1" ngModel>
+              </div>
+
+              <div class="form-group">
+                <label for="newPW2">Neues Passwort wiederholen</label>
+                <input type="password" class="form-control" placeholder="optional" name="newPW2" ngModel>
+              </div>
+
+              <hr>
+
+              <div class="form-group">
+                <label for="password">Aktuelles Passwort bestätigen</label>
+                <input type="password" class="form-control is-valid" name="password" ngModel>
+              </div>
+
+              <div class="kt-portlet__foot">
+                <div class="kt-form__actions">
+                  <button type="submit" class="btn btn-primary">Änderungen anwenden</button>
+                  <a [routerLink]="['/profile']" style="float: right" class="btn btn-secondary">Abbrechen</a>
+                </div>
+              </div>
+            </form>
+          </app-maincard>
+
+        </div>
+
+        <!-- end:: Content -->
+      </div>
+
+      <!-- begin:: Footer -->
+      <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
+        <div class="kt-container  kt-container--fluid ">
+          <div class="kt-footer__copyright">
+            <a href="#">&copy; Dennis Adam & Philipp Dalheimer</a>
+          </div>
+          <div class="kt-footer__menu">
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">About</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
+            <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- end:: Footer -->
+    </div>
+
+    <!-- end:: Wrapper -->
+  </div>
+
+  <!-- end:: Page -->
+</div>

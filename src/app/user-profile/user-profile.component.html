@@ -17,7 +17,7 @@
         <div class="kt-subheader   kt-grid__item" id="kt_subheader">
           <div class="kt-container  kt-container--fluid ">
             <div class="kt-subheader__main">
-              <h3 class="kt-subheader__title">KFZ anlegen</h3>
+              <h3 class="kt-subheader__title">Benutzerprofil</h3>
             </div>
           </div>
         </div>
@@ -36,15 +36,19 @@
               <br>
               <p>Geburtstag: {{ userData.birthday | date : "dd.MM.yyyy" }}</p>
               <p>Registriert am: {{ userData.create_timestamp | date : "dd.MM.yyyy" }}</p>
-              <p>Lieblingsmarke: <ng-template *ngIf="checkEmpty(userData.fav_brand) === false, else empty">{{ userData.fav_brand }}</ng-template></p>
-              <p>Lieblingsauto: <ng-template *ngIf="checkEmpty(userData.fav_car) === false, else empty">{{ userData.fav_car }}</ng-template></p>
+              <p>Lieblingsmarke: <ng-template *ngIf="checkEmpty(userData.fav_brand) === false; then thenbrand else elseBlock"></ng-template></p>
+              <p>Lieblingsauto: <ng-template *ngIf="checkEmpty(userData.fav_car) === false; then thencar else elseBlock"></ng-template></p>
 
-              <ng-template #empty><i>Nicht festgelegt</i></ng-template>
+              <ng-template #thenbrand>{{ userData.fav_brand }}</ng-template>
+              <ng-template #thencar>{{ userData.fav_car }}</ng-template>
+              <ng-template #elseBlock><i>Nicht festgelegt</i></ng-template>
               <br><br><br>
             </div>
           </app-maincard>
 
         </div>
+
+        <app-fab icon="la la-pencil" tooltipTitle="Profil bearbeiten" link="profile/edit"></app-fab>
 
         <!-- end:: Content -->
       </div>
